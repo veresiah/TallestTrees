@@ -1,3 +1,3 @@
-class TallestTrees::CLI
+class CLI
     #code 
 end 

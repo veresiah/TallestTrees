@@ -1,3 +1,3 @@
-class TallestTrees::Trees
+class Trees
     #code 
 end 
