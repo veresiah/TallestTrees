@@ -9,12 +9,15 @@ class API
         uri = URI.parse(@url) 
         resp = Net::HTTP.get(uri)
         data = JSON.parse(resp) 
-        data["data"].each do |plant| 
-            Trees.new(plant)
+        all_trees = data["data"] 
+        all_trees.each do |plant| 
+            plant.each do |k,v|
+                print k,v
+            end 
         end 
-    end
-    
-    Api.new.get_plant_data
-end
+        Trees.new(plant)
+    end 
+end 
+
 
 

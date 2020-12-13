@@ -5,6 +5,6 @@ require 'dotenv/load'
 require 'pry'
 
 
+require_relative "../lib/trees.rb"
 require_relative "../lib/api.rb"
 require_relative "../lib/cli.rb"
-require_relative "../lib/trees.rb"
