@@ -11,9 +11,8 @@ class API
         data = JSON.parse(resp) 
         tree_data = data["data"] 
         tree_data.each do |plant|
-            common_name = plant["common_name"]
             scientific_name = plant["scientific_name"]
-            Plant.new(common_name, scientific_name)
+            Plant.new(scientific_name)
         end
     end 
 

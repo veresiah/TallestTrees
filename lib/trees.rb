@@ -5,7 +5,7 @@ class Tree
 
     @@all = []
 
-    def initialize(common_name, scientifc_name)
+    def initialize(common_name, scientifc_name,)
         @common_name = common_name
         @scientific_name = scientific_name
         @genus = genus

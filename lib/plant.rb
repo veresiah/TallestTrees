@@ -1,12 +1,11 @@
 require_relative "../config/environment"
 
 class Plant
-    attr_accessor :common_name, :scientific_name 
+    attr_accessor :scientific_name 
 
     @@all = []
 
-    def initialize(common_name, scientifc_name)
-        @common_name = common_name
+    def initialize(scientific_name)
         @scientific_name = scientific_name
         @@all << self
     end 
