@@ -5,8 +5,8 @@ class Trees
 
     def initialize(attributes)
         attributes.each do |k, v| 
-          self.class.attr_accessor(key)
-          self.send(("#{k}="), value)
+          self.class.attr_accessor(k)
+          self.send(("#{k}="), v)
         end
         @@all << self
     end
