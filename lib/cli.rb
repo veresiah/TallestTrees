@@ -1,16 +1,14 @@
 class CLI
     def run 
-        greet
-        API.new.get_plant_name
+        greeting
         while input != "end"
         lists_plants
         prompt
-        #another_tree?
-        #end 
-        #bye
+        again
+        bye
     end 
 
-    def greet
+    def greeting
         puts "Hello there! Welcome to Tallest Trees! A CLI displaying scientic details for some of the Tallest Trees"
         sleep (1)
         puts "Lets get started"
@@ -32,27 +30,31 @@ class CLI
     end 
 
     def prompt
-    user_input = gets.strip
-    input = user_input,to_i
-    if !input.between? (0,21)
-        puts "Invalid number. Please try again"
-        sleep(1)
-        lists_plants
-        prompt
-    else 
+    user_input = get.strip
+    input = user_input,to_i-1
+    #if !input.between? (0-21)
+        #puts "Invalid number. Please try again"
+        #sleep(1)
+        #lists_plants
+        #prompt
+    #else 
         plant = Plant.all[input]
         API.new.get_each_tree
-        lists_tree_details
+        lists_tree_details 
+    end 
+
+    def again
+        puts "Would you like to look at another tree?"
+        user_response
     end 
 
 
-    #def user_input
-       # @input = gets.strip
-    #end 
+    def user_response
+        input = gets.strip
+    end 
 
-    #def bye
-       # puts "Goodbye, come again!"
-    #end 
+    def bye
+        puts "Goodbye, come again!"
+    end
 end 
-
-CLI.new.run
+end 
