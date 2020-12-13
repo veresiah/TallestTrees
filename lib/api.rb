@@ -31,8 +31,7 @@ class API
         family = tree_data[0]["family"]
         image_url = tree_data[0]["image_url"]
         Tree.new(common_name, scientific_name, genus, year, bibliography, family_common_name,image_url)
-        end
-    end 
+    end
 end 
 
 
