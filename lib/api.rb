@@ -1,4 +1,4 @@
-#require_relative "../config/environment"
+require_relative "../config/environment"
 
 class API
     def initialize 
@@ -22,22 +22,32 @@ class API
         data = JSON.parse(resp) 
         tree_data = data["data"] 
         tree_data.each do |plant|
-        common_name = tree_data[0]["common_name"]
-        tree_data.each do |plant|
-        scientific_name = tree_data[0]["scientific_name"]
-        tree_data.each do |plant|
-        genus = tree_data[0]["genus"]
-        tree_data.each do |plant|
-        year = tree_data[0]["year"]
-        tree_data.each do |plant|
-        bibliography = tree_data[0]["bibliography"]
-        tree_data.each do |plant|
-        family_common_name = tree_data[0]["family_common_name"]
-        tree_data.each do |plant|
-        family = tree_data[0]["family"]
-        tree_data.each do |plant|
-        image_url = tree_data[0]["image_url"]
-        Tree.new(common_name, scientific_name, genus, year, bibliography, family_common_name,family,image_url)
+            tree_data.map do |plant, attributes|
+                Tree.new(attributes)
+            end 
         end 
+        #common_name = tree_data["common_name"]
+        #
+        #tree_data.each do |plant|
+            #scientific_name = tree_data["scientific_name"]
+        #end 
+        #tree_data.each do |plant|
+            #genus = tree_data["genus"]
+        #end 
+        #tree_data.each do |plant|
+            #year = tree_data["year"]
+        #end
+        #tree_data.each do |plant|
+            #bibliography = tree_data["bibliography"]
+        #end 
+        #tree_data.each do |plant|
+            #family_common_name = tree_data["family_common_name"]
+        #end 
+        #t#ree_data.each do |plant|
+            #family = tree_data["family"]
+        #end 
+        #tree_data.each do |plant|
+            #image_url = tree_data["image_url"]
+        #end 
     end 
 end 
