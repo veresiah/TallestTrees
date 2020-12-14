@@ -1,15 +1,19 @@
 class CLI
     def run 
         greeting
-        while @input != "end"
+        #loop starts here
             API.new.get_plant_name
             puts "loading...twenty of the World's Tallest Trees"
             sleep(1)
             lists_plants
             puts "Type the number corresponding to the plant you would like to know more about."
-            user_input = gets.chomp
-        end 
-    end 
+            #user select a number 
+            API.new.get_each_tree #problem
+            #displays data accordingly 
+            #user selects another number (Y/N)
+            #lists_plants displayed if yes and exit if no 
+            #exit 
+    end
 
     def greeting 
         puts "Hello there! Welcome to Tallest Trees! A CLI to learn about scientic details of the tallest trees."
@@ -22,13 +26,4 @@ class CLI
             puts "#{index}. #{plant.scientific_name}"
         end 
     end 
-
-    #def user_response
-        #@input = gets.strip
-   # end 
-
-    #def bye
-        #puts "Goodbye, please come again!"
-    #end
-
- 
+end 

@@ -16,14 +16,14 @@ class API
         end
     end 
 
-    def get_each_tree
+    def get_each_tree  #not getting to extract each key associating with the value (details) that is needed 
         uri = URI.parse(@url) 
         resp = Net::HTTP.get(uri)
         data = JSON.parse(resp) 
         tree_data = data["data"] 
         tree_data.each do |plant|
-            tree_data.map do |plant, attributes|
-                Tree.new(attributes)
+            tree_data.each do |plant, properties|
+                puts "#{plant}: #{properties}"
             end 
         end 
     end 
