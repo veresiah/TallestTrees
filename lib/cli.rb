@@ -1,7 +1,6 @@
 class CLI
     def run 
         greeting
-        @input = ""
         while @input != "end"
             API.new.get_plant_name
             puts "loading...twenty of the World's Tallest Trees"
@@ -23,7 +22,7 @@ class CLI
             puts "#{index}. #{plant.scientific_name}"
         end 
     end 
-    
+
     #def user_response
         #@input = gets.strip
    # end 
