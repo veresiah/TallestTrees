@@ -1,4 +1,4 @@
-require_relative "../config/environment"
+#require_relative "../config/environment"
 
 class API
     def initialize 
@@ -21,17 +21,23 @@ class API
         resp = Net::HTTP.get(uri)
         data = JSON.parse(resp) 
         tree_data = data["data"] 
+        tree_data.each do |plant|
         common_name = tree_data[0]["common_name"]
+        tree_data.each do |plant|
         scientific_name = tree_data[0]["scientific_name"]
+        tree_data.each do |plant|
         genus = tree_data[0]["genus"]
+        tree_data.each do |plant|
         year = tree_data[0]["year"]
+        tree_data.each do |plant|
         bibliography = tree_data[0]["bibliography"]
+        tree_data.each do |plant|
         family_common_name = tree_data[0]["family_common_name"]
+        tree_data.each do |plant|
         family = tree_data[0]["family"]
+        tree_data.each do |plant|
         image_url = tree_data[0]["image_url"]
-        Tree.new(common_name, scientific_name, genus, year, bibliography, family_common_name,image_url)
-    end
+        Tree.new(common_name, scientific_name, genus, year, bibliography, family_common_name,family,image_url)
+        end 
+    end 
 end 
-
-
-

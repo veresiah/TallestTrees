@@ -1,11 +1,11 @@
-require_relative "../config/environment"
+#require_relative "../config/environment"
 
 class Tree
     attr_accessor :common_name, :scientific_name, :genus, :year, :bibliography, :family_common_name, :family, :image_url
 
     @@all = []
 
-    def initialize(common_name, scientifc_name)
+    def initialize(common_name, scientifc_name, genus, year, bibliography,family_common_name, family, image_url)
         @common_name = common_name
         @scientific_name = scientific_name
         @genus = genus

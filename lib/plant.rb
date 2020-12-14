@@ -1,4 +1,4 @@
-require_relative "../config/environment"
+#require_relative "../config/environment"
 
 class Plant
     attr_accessor :scientific_name 
