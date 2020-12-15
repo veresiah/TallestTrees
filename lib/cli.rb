@@ -43,4 +43,4 @@ class CLI
     end 
 end 
 
-binding.pry
+#binding.pry
