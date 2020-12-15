@@ -34,13 +34,11 @@ class CLI
            puts  "Common Name: #{att.common_name}"
            puts "Family Common Name: #{att.family_common_name}"
            puts "Genus: #{att.genus}"
-           puts "Year: #{att.year}"
-           puts "Bibliography: #{att.bibliography}"
+           puts "The first year the name of this species was published: #{att.year}"
+           puts "Bibliography (publication): #{att.bibliography}"
            puts "Family: #{att.family}"
            puts "Synonyms: #{att.synonyms}"
-           puts "Use this link to see how this tree looks: #{att.image_url}"
+           puts "Click on the link to see how this tree looks: #{att.image_url}"
         end 
     end 
 end 
-
-#binding.pry
