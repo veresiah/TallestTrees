@@ -2,13 +2,12 @@ class CLI
     def run 
         greeting
         #loop starts here
-            API.new.get_plant_name
             puts "loading...twenty of the World's Tallest Trees"
             sleep(1)
-            lists_plants
+            list_trees
             puts "Type the number corresponding to the plant you would like to know more about."
             #user select a number 
-            API.new.get_each_tree #problem
+            list_tree_details
             #displays data accordingly 
             #user selects another number (Y/N)
             #lists_plants displayed if yes and exit if no 
@@ -21,9 +20,27 @@ class CLI
         puts "Lets get started"
     end 
 
-    def lists_plants
-        Plant.all.each.with_index(1) do |plant, index|
-            puts "#{index}. #{plant.scientific_name}"
+    def list_trees
+        API.new.get_trees
+        Tree.all.each.with_index(1) do |tree, i|
+            puts "#{i}. #{tree.scientific_name}"
+        end 
+    end 
+
+    def list_tree_details  
+        API.new.get_trees 
+        Tree.all.each.with_index(1) do |att, i|
+           puts "Scientific Name: #{att.scientific_name}"
+           puts  "Common Name: #{att.common_name}"
+           puts "Family Common Name: #{att.family_common_name}"
+           puts "Genus: #{att.genus}"
+           puts "Year: #{att.year}"
+           puts "Bibliography: #{att.bibliography}"
+           puts "Family: #{att.family}"
+           puts "Synonyms: #{att.synonyms}"
+           puts "Use this link to see how this tree looks: #{att.image_url}"
         end 
     end 
 end 
+
+binding.pry

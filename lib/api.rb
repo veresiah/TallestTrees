@@ -5,26 +5,34 @@ class API
         @url = "https://trefle.io/api/v1/plants?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&token=#{ENV['API_KEY']}"
     end 
     
-    def get_plant_name
+    def get_trees
         uri = URI.parse(@url) 
         resp = Net::HTTP.get(uri)
         data = JSON.parse(resp) 
         tree_data = data["data"] 
-        tree_data.each do |plant|
-            scientific_name = plant["scientific_name"]
-            Plant.new(scientific_name)
-        end
-    end 
-
-    def get_each_tree  #not getting to extract each key associating with the value (details) that is needed 
-        uri = URI.parse(@url) 
-        resp = Net::HTTP.get(uri)
-        data = JSON.parse(resp) 
-        tree_data = data["data"] 
-        tree_data.each do |plant|
-            tree_data.each do |plant, properties|
-                puts "#{plant}: #{properties}"
-            end 
+        tree_data.each do |tree_hash|
+        #tree_hash.each do |tree_key, tree_attributes|
+        #tree_attributes.each do |tree_details|
+            scientific_name = tree_hash["scientific_name"]
+            common_name = tree_hash["common_name"]
+            family_common_name = tree_hash["family_common_name"]
+            genus = tree_hash["genus"]
+            year = tree_hash["year"]
+            bibliography = tree_hash["bibliography"]
+            family = tree_hash["family"]
+            synonyms = tree_hash
+            image_url = tree_hash["image_url"]
+            Tree.new(scientific_name, common_name,family_common_name, genus, year, bibliography, family, synonyms, image_url)
         end 
     end 
-end 
+end
+    #binding.pry
+
+        #tree_data.each do |plant| #outputs the first hash in the array of hashes. As in [0] 
+            #puts "#{plant}"
+        #tree_data.each.with_index do |i, plant| #output an array of plant hashes with their data
+            #puts "#{plant}"
+            #binding.pry
+            #scientific_name = plant["scientific_name"]
+            #Tree.new(attributes)
+
