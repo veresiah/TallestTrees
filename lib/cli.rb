@@ -1,23 +1,22 @@
 class CLI
     def run 
+        #loop
         greeting
-        #loop starts here
-            puts "loading...twenty of the World's Tallest Trees"
-            sleep(1)
-            list_trees
-            puts "Type the number corresponding to the plant you would like to know more about."
-            #user select a number 
-            list_tree_details
-            #displays data accordingly 
-            #user selects another number (Y/N)
-            #lists_plants displayed if yes and exit if no 
-            #exit 
+        list_trees
+        #select_a_num
+        list_tree_details
+        #select_or_end 
+        #lists_plants displayed if yes/exit if no 
+        goodbye
     end
 
     def greeting 
+        system "clear"
         puts "Hello there! Welcome to Tallest Trees! A CLI to learn about scientic details of the tallest trees."
         sleep (1)
         puts "Lets get started"
+        puts "loading...twenty of the World's Tallest Trees"
+        sleep(1)
     end 
 
     def list_trees
@@ -25,6 +24,11 @@ class CLI
         Tree.all.each.with_index(1) do |tree, i|
             puts "#{i}. #{tree.scientific_name}"
         end 
+        puts "Type the number corresponding to the plant you would like to know more about."
+    end 
+
+    def select_a_num
+        #code here 
     end 
 
     def list_tree_details  
@@ -40,5 +44,13 @@ class CLI
            puts "Synonyms: #{att.synonyms}"
            puts "Click on the link to see how this tree looks: #{att.image_url}"
         end 
+    end 
+
+    def select_or_end 
+        #code here 
+    end 
+
+    def goodbye
+        puts "'Tallest Trees' is terminated...goodbye"
     end 
 end 
