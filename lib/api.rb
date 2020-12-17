@@ -18,10 +18,8 @@ class API
             year = tree_hash["year"]
             bibliography = tree_hash["bibliography"]
             family = tree_hash["family"]
-            #synonyms = tree_hash ["synonyms"]
             image_url = tree_hash["image_url"]
             Tree.new(scientific_name, common_name,family_common_name, genus, year, bibliography, family, image_url)
-            #synonyms,
         end 
     end 
 end
