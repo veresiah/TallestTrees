@@ -1,9 +1,10 @@
 class Tree
-    attr_accessor :scientific_name, :common_name,:family_common_name, :genus, :year, :bibliography, :family, :synonyms, :image_url
-
+    attr_accessor :scientific_name, :common_name,:family_common_name, :genus, :year, :bibliography, :family, :image_url
+    # :synonyms,
     @@all = []
 
-    def initialize(scientific_name, common_name,family_common_name, genus, year, bibliography, family, synonyms, image_url)
+    def initialize(scientific_name, common_name,family_common_name, genus, year, bibliography, family, image_url)
+        #synonyms,
         @scientific_name = scientific_name
         @common_name = common_name
         @family_common_name = family_common_name
@@ -11,7 +12,7 @@ class Tree
         @year = year
         @bibliography = bibliography
         @family = family
-        @synonyms = synonyms
+        #@synonyms = synonyms
         @image_url = image_url
         
         @@all << self

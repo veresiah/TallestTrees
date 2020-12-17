@@ -1,12 +1,12 @@
 class CLI
     def run 
-        #loop
         greeting
-        list_trees
-        #select_a_num
-        list_tree_details
-        #select_or_end 
-        #lists_plants displayed if yes/exit if no 
+        while @input != "exit"
+            list_trees
+            user_input 
+            list_tree_details
+            user_input 
+        end 
         goodbye
     end
 
@@ -24,16 +24,13 @@ class CLI
         Tree.all.each.with_index(1) do |tree, i|
             puts "#{i}. #{tree.scientific_name}"
         end 
-        puts "Type the number corresponding to the plant you would like to know more about."
+        puts "Type the number corresponding to the tree you would like to know more about."
+        input = nil
     end 
-
-    def select_a_num
-        #code here 
-    end 
-
-    def list_tree_details  
+1
+    def list_tree_details  #number slected should correspond with the user_input. Currently listing all trees and their attributes 
         API.new.get_trees 
-        Tree.all.each.with_index(1) do |att, i|
+        Tree.all.each.with_index(@input) do |att, i|
            puts "Scientific Name: #{att.scientific_name}"
            puts  "Common Name: #{att.common_name}"
            puts "Family Common Name: #{att.family_common_name}"
@@ -41,16 +38,21 @@ class CLI
            puts "The first year the name of this species was published: #{att.year}"
            puts "Bibliography (publication): #{att.bibliography}"
            puts "Family: #{att.family}"
-           puts "Synonyms: #{att.synonyms}"
+           #puts "Synonyms: #{att.synonyms}"
            puts "Click on the link to see how this tree looks: #{att.image_url}"
         end 
     end 
 
-    def select_or_end 
-        #code here 
+    def select_another
+        puts "Would you like to learn about another tree?"
+    end 
+
+    def user_input 
+        @input = gets.strip.to_i 
     end 
 
     def goodbye
         puts "'Tallest Trees' is terminated...goodbye"
+        exit
     end 
 end 
