@@ -1,11 +1,10 @@
 class Tree
-    attr_reader :scientific_name, :common_name,:family_common_name, :genus, :year, :bibliography, :family, :image_url
+    attr_accessor :scientific_name, :common_name,:family_common_name, :genus, :year, :bibliography, :family, :image_url
     
     @@all = []
 
-    def initialize(scientific_name, common_name,family_common_name, genus, year, bibliography, family, image_url)
+    def initialize(scientific_name, family_common_name, genus, year, bibliography, family, image_url)
         @scientific_name = scientific_name
-        @common_name = common_name
         @family_common_name = family_common_name
         @genus = genus
         @year = year
