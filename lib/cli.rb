@@ -37,6 +37,11 @@ class CLI
     def user_resp
         @input = gets.chomp
     end 
+
+    def tree_from_collection
+        Tree.all.detect.with_index(@input) { |t| t.values}
+        puts t.values
+    end 
     
     def goodbye
         puts "'Tallest Trees' is terminated...goodbye"
