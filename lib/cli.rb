@@ -20,7 +20,7 @@ class CLI
             puts "#{i}. #{tree.scientific_name}"
         end
         sleep(1) 
-        puts "Type the name of the tree you would like to know more about."
+        puts "Type the number of the tree you would like to know more about."
     end 
 
     def menu 
@@ -31,7 +31,7 @@ class CLI
             list_trees
         else 
             #method to get a tree detail by index. 
-
+        end 
     end 
 
     def user_resp
