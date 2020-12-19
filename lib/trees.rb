@@ -1,5 +1,5 @@
 class Tree
-    attr_accessor :scientific_name, :common_name,:family_common_name, :genus, :year, :bibliography, :family, :image_url
+    attr_reader :scientific_name, :common_name,:family_common_name, :genus, :year, :bibliography, :family, :image_url
     
     @@all = []
 
@@ -12,11 +12,14 @@ class Tree
         @bibliography = bibliography
         @family = family
         @image_url = image_url
-        
-        @@all << self
-    end 
+        save
+    end  
 
     def self.all
         @@all
+    end 
+
+    def save
+        @@all << self
     end 
 end 
