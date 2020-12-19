@@ -1,9 +1,7 @@
 class CLI
     def run 
         greeting
-        list_trees
         menu 
-        goodbye
     end
 
     def greeting 
@@ -18,33 +16,36 @@ class CLI
         API.new.get_trees
         Tree.all.each.with_index(1) do |tree, i|
             puts "#{i}. #{tree.scientific_name}"
-        end
-        sleep(1) 
-        puts "Type the number of the tree you would like to know more about."
-    end 
-
-    def menu 
-        @input = nil
-        @input = user_resp.to_i-1
-        if !@input.between?(0,19)
-            puts "Invalid selection! Loading...trees" 
-            list_trees
-        else 
-            #method to get a tree detail by index. 
+            sleep(1)
         end 
     end 
 
-    def user_resp
-        @input = gets.chomp
+    def menu 
+        list_trees
+        input = nil
+        while input != "exit"
+            puts "Type the number corresponding to tree you are interested in or type 'exit' to leave"
+            input = gets.chomp
+            if input.to_i > 0 && input.to_i < 21
+                tree = Tree.all[input.to_i-1]
+                puts "Scientific Name: #{tree.scientific_name}"
+                puts "Family Common Name: #{tree.family_common_name}"
+                puts "Genus: #{tree.genus}"
+                puts "The first year the name of this tree was published: #{tree.year}"
+                puts "Publication: #{tree.bibliography}"
+                puts "Family: #{tree.family}"
+                puts "Click on the link to see how this tree looks: #{tree.image_url}"
+            elsif input == "exit"
+                goodbye
+            else 
+                puts "I don't understand. I only accept integers from 1 to 20!"
+            end 
+        end 
     end 
 
-    def tree_from_collection
-        Tree.all.detect.with_index(@input) { |t| t.values}
-        puts t.values
-    end 
-    
     def goodbye
-        puts "'Tallest Trees' is terminated...goodbye"
+        puts "'Tallest Trees' is being terminated...goodbye"
+        sleep(2)
         system "clear"
     end
 end
