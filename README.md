@@ -15,3 +15,7 @@ This application uses an API that needs authentication. Plese follow the steps b
 6. Add your access token to .env 
    API_KEY=your_access_token
    
+Gems this applicaton needs:
+gem 'dotenv'
+gem 'colorize'
+   
