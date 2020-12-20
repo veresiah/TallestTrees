@@ -12,7 +12,7 @@ This application uses an API that needs authentication. Plese follow the steps b
 3. Login on your account
 4. Grab your Trefle access token 
 5. Create an .env file 
-6. Add your access token to .env 
+6. Add your access token to .env file 
    API_KEY=your_access_token
    
 Gems this applicaton needs:
