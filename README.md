@@ -1,5 +1,5 @@
 # TallestTrees
- 
+
  A CLI displaying the tallest trees and some of its details sourced from the Trefle REST API. 
  
 ## Installation
@@ -18,7 +18,7 @@
  ```
  ## Usage 
  
-To run this application, you will need to obtain an access token. Please follow to steps below: 
+ To run this application, you will need to obtain an access token. Please follow to steps below: 
 Note: this is a free API and therefore no fees are charged. 
 
  1. Create an account on trefle.io
@@ -28,6 +28,12 @@ Note: this is a free API and therefore no fees are charged.
  5. Create an .env file in your repo
  6. Add your access token to .env file 
    API_KEY=your_access_token
+ 
+ ## Contributing 
+  
+ For freeback, bug reporting, etc, click [here](https://github.com/veresiah/TallestTrees/issues).
+ Pull requests are welcome [here](https://github.com/veresiah/TallestTrees/pulls).
+ 
    
  ## License 
  [MIT](https://github.com/veresiah/TallestTrees/blob/main/LICENSE)
