@@ -5,12 +5,16 @@
 ## Installation
 
  1. Clone repo into desired folder 
- ```bash git clone git@github.com:veresiah/TallestTrees.git 
+ ```bash 
+ git clone git@github.com:veresiah/TallestTrees.git 
  ``` 
- ```bash cd TallestTrees
+ 
+ ```bash 
+ cd TallestTrees
  ```
  2. Run 'bundle' to install dependencies 
- ``bash bundle 
+ ```bash 
+ bundle 
  ```
  ## Usage 
  
