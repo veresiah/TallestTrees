@@ -18,7 +18,7 @@ class CLI
         API.new.get_trees
         Tree.all.each.with_index(1) do |tree, i|
             puts "#{i}. #{tree.scientific_name}".light_green
-            sleep(1)
+        sleep(0.5)
         end 
     end 
 
@@ -36,7 +36,7 @@ class CLI
                 puts "The first year the name of this tree was published: #{tree.year}".light_blue
                 puts "Publication: #{tree.bibliography}".light_blue
                 puts "Family: #{tree.family}".light_blue
-                puts "Click on the link (if provided) to see how this tree looks: #{tree.image_url}".magenta
+                puts "Click on the link (if provided) to see how this tree looks: #{tree.image_url}".magenta 
             elsif input == "exit"
                 goodbye
             else 
@@ -44,6 +44,7 @@ class CLI
             end 
         end 
     end 
+    
     def goodbye
         puts "'Tallest Trees' is being terminated...goodbye".red
         sleep(2)

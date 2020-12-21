@@ -21,4 +21,11 @@ class Tree
     def save
         @@all << self
     end 
+
+     # expand? to add queries from tree lists. 
+    #def self.find_all_by_scientifc_name(input)
+        #Tree.all.select do |tree| 
+            #tree.scientific_name.include? input 
+        #end
+    #end
 end 
