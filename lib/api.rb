@@ -1,5 +1,3 @@
-require_relative "../config/environment"
-
 class API
     def initialize 
         @url = "https://trefle.io/api/v1/plants?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&token=#{ENV['API_KEY']}"
