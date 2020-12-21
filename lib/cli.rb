@@ -40,7 +40,7 @@ class CLI
             elsif input == "exit"
                 goodbye
             else 
-                puts "I do not understand. I only accept integers from 1 to 20! or 'exit'".yellow
+                puts "I do not understand. I only accept integers from 1 to 20 or 'exit'".yellow
             end 
         end 
     end 
