@@ -30,4 +30,4 @@ Note: this is a free API and therefore no fees are charged.
    API_KEY=your_access_token
    
  ## License 
- MIT(https://github.com/veresiah/TallestTrees/blob/main/LICENSE)
+ [MIT](https://github.com/veresiah/TallestTrees/blob/main/LICENSE)
